@@ -1,0 +1,86 @@
+/*Global*/
+* {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    font-family: Robot, Arial, sans-serif;
+}
+body {
+    width: 100%;
+    height: 100%;
+}
+h2 {
+    color: #00838f;
+    font-size: smaller;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+p {
+    background-color: #eeeeee;
+}
+
+/*button names should always be in uppercase*/
+button {
+    background-color: #00838f;
+    color: white;
+    text-transform: uppercase;
+    font-size: larger;
+}
+section {
+    position: fixed;
+    height: 100vh;
+}
+#channel {
+    width: 399px;
+    height: 100vh;
+}
+#chat {
+    left: 400px;
+    width: calc(100% - 400px);
+    border-left: 1px solid rgb(196, 192, 192);
+}
+
+/*App bar*/
+.headbar {
+    background-color: rgb(216, 215, 215);
+    color: #00838f;
+    height: 50px;
+    padding: 10px;
+    line-height: 50px;
+}
+
+/*Channels list*/
+.channel-list {
+    background-color: white;
+    list-style-type: none;
+}
+.selected {
+    background-color: rgb(196, 192, 192);
+    border-right: 4px solid #00838f;
+}
+.channel-list li {
+    box-sizing: border-box;
+    padding: 22px;
+    height: 66px;
+}
+.timestamp {
+    font-size: small;
+}
+
+/*Messages*/
+#chat-area {
+    width: 75%;
+}
+.message {
+    padding: 10px;
+    margin: 5px;
+}
+.message.incoming-message {
+    background-color: rgb(206, 151, 211);
+}
+.message.incoming-message span {
+    color: white;
+}
+.message.outgoing-message {
+    background-color: rgb(197, 197, 197);
+}
+
