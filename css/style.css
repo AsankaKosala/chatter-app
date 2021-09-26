@@ -1,86 +1,234 @@
-/*Global*/
 * {
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
-    font-family: Robot, Arial, sans-serif;
-}
-body {
-    width: 100%;
-    height: 100%;
-}
-h2 {
-    color: #00838f;
-    font-size: smaller;
-    margin-top: 5px;
-    text-transform: uppercase;
-}
-p {
-    background-color: #eeeeee;
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/*button names should always be in uppercase*/
-button {
-    background-color: #00838f;
-    color: white;
-    text-transform: uppercase;
-    font-size: larger;
+body {
+    height: 100%;
+    width: 100%;
 }
-section {
+
+section {    
     position: fixed;
+    top: 0px;
     height: 100vh;
 }
-#channel {
+
+#channel-area {
     width: 399px;
     height: 100vh;
+    border-right: 1px solid rgb(199, 199, 199);
 }
-#chat {
-    left: 400px;
+
+#message-area {
     width: calc(100% - 400px);
-    border-left: 1px solid rgb(196, 192, 192);
+    left: 400px;
 }
+/* APP BAR */
 
-/*App bar*/
 .headbar {
-    background-color: rgb(216, 215, 215);
+    background-color: #eeeeee;
     color: #00838f;
-    height: 50px;
-    padding: 10px;
-    line-height: 50px;
+    height: 66px;
+    line-height: 66px;
+    padding: 0px 22px 0px 22px;
 }
 
-/*Channels list*/
+.headbar img {
+    background-color: #00838f;
+}
+
+#app-title {
+    color: #00838f;
+    margin-left: 40px;
+}
+
+h1 {
+    font-size: 18px;
+}
+
+.headbar i {
+    line-height: 66px;
+}
+
+#logo {
+    height: 44px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 5px;
+}
+
+
+/* CHANNELS LIST */
+
+h2 {
+    color: #00838f;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin: 22px 22px 11px 11px; 
+}
+
 .channel-list {
+    /* #3 #channels #list modifies h2 to ul */
     background-color: white;
+    /* #3 #channels #bullets removed */
     list-style-type: none;
 }
-.selected {
-    background-color: rgb(196, 192, 192);
-    border-right: 4px solid #00838f;
-}
+
 .channel-list li {
     box-sizing: border-box;
     padding: 22px;
     height: 66px;
-}
-.timestamp {
-    font-size: small;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
 }
 
-/*Messages*/
+.channel-list li.selected {
+    background-color: #eeeeee;
+    border-right: 3px solid #00838f;
+}
+
+.channel-name {
+    font-size: 16px;
+    margin: 0px 22px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1 1 auto;
+}
+
+
+/* MESSAGES */
 #chat-area {
-    width: 75%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+#message-area h1 {
+    display: inline;
 }
 .message {
+    width: 75%;
     padding: 10px;
-    margin: 5px;
-}
-.message.incoming-message {
-    background-color: rgb(206, 151, 211);
-}
-.message.incoming-message span {
-    color: white;
-}
-.message.outgoing-message {
-    background-color: rgb(197, 197, 197);
 }
 
+
+.message-content {
+    padding: 11px;
+    margin: 0px 11px;
+    text-align: left;
+}
+
+.message-content h3 {
+    font-size: 14px;
+    color: #00838f;
+    margin-bottom: 11px;
+}
+
+.message-content p {
+    font-size: 14px;
+}
+
+.incoming-message .message-content {
+    border-radius: 20px 20px 20px 0px;
+    background-color: #eeeeee;
+}
+
+.outgoing-message .message-content {
+    border-radius: 20px 20px 0px 20px;
+    background-color: #00838f;
+    color: white;
+}
+
+.incoming-message {
+    align-self: flex-start;
+}
+
+.outgoing-message {
+    align-self: flex-end;
+}
+
+.timestamp {
+    font-size: 12px;
+    color: #666666;
+}
+
+#message-area .headbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fab {
+    width: 44px;
+    height: 44px;
+    background-color: #00838f;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px 0 #aaaaaa;
+
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    line-height: 44px;
+
+    position: absolute;
+    top: 44px;
+    right: 22px;
+
+    cursor: pointer;
+}
+
+.message-wrapper {
+    display: flex;
+    align-items: flex-end;
+}
+
+#input-area {
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #eeeeee;
+    padding: 15px;
+    align-items: center;
+    width: 75%;
+}
+
+#input-area input {
+    flex: 2;
+    margin: 5px;
+    padding: 10px;
+}
+
+.incoming-message .timestamp {
+    position: relative;
+    left: 40px;
+}
+
+.outgoing-message .timestamp {
+    position: relative;
+    left: 885px;
+}
+
+/* MESSAGE-BUTTONS */
+#emoticon-button {
+    background-color: #00838f;
+    padding: 10px;
+    border-radius: 50%;
+    color: white;
+}
+
+button {
+    background-color: #00838f;
+    color: #00838f;
+    text-transform: uppercase;
+    font-size: larger;
+    padding: 10px;
+}

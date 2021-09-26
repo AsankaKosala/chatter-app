@@ -1,91 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>
-            chatter|app
-        </title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    </head>
-    <body>
-        <!--channel area-->
-        <section id="channel">
-            <div class="headbar">
-                <h1><img src="https://ip.lfe.mw.tum.de/sections/moocus.png" alt="Moocus duck image" style="height: 56px; background-color: #00838f;">Chatter | app</h1>
-            </div>
 
-            <!--favorit channels go here-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chatter|App</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <section id="channel-area">
+        <div class="headbar">
+                <img id="logo" src="https://ip.lfe.mw.tum.de/sections/moocus.png" alt="logo">
+                <h1 id="app-title"> 
+                    chatter | app       
+                </h1>
+        </div>
+        <a class="fab">+</a>
+        <div>
             <h2>Favorites</h2>
             <ul class="channel-list">
                 <li class="selected">
-                    <span class="channel-name">Meetup</span>
+                    <i class="material-icons">group</i><span class="channel-name">MeetUp</span>
                     <span class="timestamp">11:51</span>
-                    <br>
                 </li>
                 <li>
-                    <span class="channel-name">Oktoberfest</span>
-                    <span class="timestamp">10.51</span>
-                    <br>
+                    <i class="material-icons">group</i><span class="channel-name">Oktoberfest</span>
+                    <span class="timestamp">10:51</span>
                 </li>
             </ul>
 
-            <!--regular channels go here-->
             <h2>Regular</h2>
             <ul class="channel-list">
                 <li>
-                    <span class="channel-name">WeatherChannel</span>
+                    <i class="material-icons">group</i><span class="channel-name">WeatherChannel</span>
                     <span class="timestamp">Yesterday</span>
-                    <br>
                 </li>
                 <li>
-                    <span class="channel-name">SevenContinents</span>
+                    <i class="material-icons">group</i><span class="channel-name">SevenContinents</span>
                     <span class="timestamp">23 May 2018</span>
-                    <br>
                 </li>
             </ul>
-        </section>
-        
-        <!--Chat area. chat content shows here-->
-        <section id="chat">
-             <div class="headbar">
-                <h1 style="display: inline;">Meetup</h1>
-                <button>FAVORITE</button>
-             </div>
-             <div id="chat-area">
-                 <div>
-                     <div class="message incoming-message">
-                        <h2>Tom</h2>
-                        <span>Hi jerry. How are you?</span>
-                     </div>
-                    <small>11:51</small>
-                 </div>
-                 <div>
-                    <div class="message outgoing-message">
-                        <h2>Jerry</h2>
-                        <span>Hi Tom. I am fine. thank you.</span>
+        </div>
+    </section>
+
+    <!-- chat area -->
+    <section id="message-area">
+        <div class="headbar"> 
+            <h1>MeetUp</h1>
+            <a class="material-icons" id="favorite-button">favorite</a>
+        </div>
+        <div id="chat-area">
+            <div class="message incoming-message">
+                <div class="message-wrapper">
+                    <i class="material-icons">account_circle</i>
+                    <div class="message-content">
+                        <h3>Jessie Koch</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat eveniet porro officia,
+                            nesciunt aut delectus incidunt possimus illum placeat repudiandae reiciendis corporis ab.
+                            ste vel ducimus blanditiis, tempora adipisci doloribus.
+                        </p>
                     </div>
-                    <small>11:51</small>
                 </div>
-                <div>
-                    <div class="message incoming-message">
-                        <h2>Tom</h2>
-                        <span>I am going to chatch you today. :-)</span>
+                <span class="timestamp">11:45</span>
+            </div>
+
+            <div class="message incoming-message">
+                <div class="message-wrapper">
+                    <i class="material-icons">account_circle</i>
+                    <div class="message-content">
+                        <h3>Jessie Koch</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat eveniet porro officia,
+                                nesciunt aut delectus incidunt possimus illum placeat repudiandae reiciendis corporis ab.
+                                Iste vel ducimus blanditiis, tempora adipisci doloribus.
+                            </p>
                     </div>
-                    <small>11:52</small>
                 </div>
-                <div>
-                    <div class="message outgoing-message">
-                        <h2>Jerry</h2>
-                        <span>Lets see who wins</span>
+                <span class="timestamp">11:49</span>
+            </div>
+
+            <div class="message outgoing-message">
+                <div class="message-wrapper">
+                    <div class="message-content">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat eveniet porro officia,
+                            nesciunt aut delectus incidunt possimus illum placeat repudiandae reiciendis corporis ab.
+                            Iste vel ducimus blanditiis, tempora adipisci doloribus.
+                        </p>
                     </div>
-                    <small>11:52</small>
+                    <i class="material-icons">account_circle</i>
                 </div>
-                <div>
-                    <input id="input-message" type="text" placeholder="type your message here">
-                    <button>SEND</button>
+                <span class="timestamp">11:49</span>
+            </div>
+
+            <div class="message incoming-message">
+                <div class="message-wrapper">
+                    <i class="material-icons">account_circle</i>
+                    <div class="message-content">
+                        <h3>Jessie Koch</h3>
+                        <p>Lorem ipsum Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur dolor
+                            voluptas debitis deleniti iure consequatur saepe! Sed repellendus accusantium neque nemo
+                            doloremque ipsa deleniti. Cumque rem repudiandae accusamus dolores adipisci!.
+                        </p>
+                    </div>
                 </div>
-             </div>
-        </section>
-    </body>
+                <span class="timestamp">11:49</span>
+            </div>
+        </div>
+        <div id="input-area">
+            <i class="material-icons" id="emoticon-button">insert_emoticon</i>
+            <input
+              type="text"
+              id="message-input"
+              name="message-input"
+              minlength="1"
+              maxlength="500"
+              placeholder="... write your message"
+            />
+            <a class="material-icons button" id="send-button">send</a>
+          </div>
+    </section>
+
+</body>
+
 </html>
